@@ -22,12 +22,13 @@
     "oxid-kernel-plugin": "Sioweb\\Oxid\\Api\\Kernel\\Plugin"
   },
   "require": {
-    "php": ">=7.0"
+    "php": ">=7.0",
+    "sioweb/oxid-kernel": "*"
   },
   "autoload": {
     "psr-4": {
-      "Sioweb\\Oxid\\Api\\Legacy\\": "../../../source/modules/sioweb/Api/",
-      "Sioweb\\Oxid\\Api\\": "src/"
+      "Sioweb\\Oxid\\Api\\": "src/",
+      "Sioweb\\Oxid\\Api\\Legacy\\": "../../../source/modules/sioweb/Api/"
     }
   }
 }
