@@ -29,6 +29,9 @@
     "psr-4": {
       "Sioweb\\Oxid\\Api\\": "src/",
       "Sioweb\\Oxid\\Api\\Legacy\\": "../../../source/modules/sioweb/Api/"
-    }
+    },
+    "exclude-from-classmap": [
+        "src/Resources/oxid"
+    ]
   }
 }
