@@ -1,0 +1,33 @@
+{
+  "name": "sioweb/oxid-api",
+  "description": "Symfony based api",
+  "type": "oxideshop-module",
+  "keywords": [
+    "oxid",
+    "modules",
+    "cronjob"
+  ],
+  "homepage": "https://www.sioweb.de",
+  "license": [
+    "GPL-3.0-only"
+  ],
+  "extra": {
+    "oxideshop": {
+      "blacklist-filter": [
+        "documentation/**/*.*"
+      ],
+      "source-directory": "./src/Resources/oxid",
+      "target-directory": "sioweb/Api"
+    },
+    "oxid-kernel-plugin": "Sioweb\\Oxid\\Api\\Kernel\\Plugin"
+  },
+  "require": {
+    "php": ">=7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Sioweb\\Oxid\\Api\\Legacy\\": "../../../source/modules/sioweb/Api/",
+      "Sioweb\\Oxid\\Api\\": "src/"
+    }
+  }
+}
