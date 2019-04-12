@@ -19,7 +19,7 @@
       "source-directory": "./src/Resources/oxid",
       "target-directory": "sioweb/Api"
     },
-    "oxid-kernel-plugin": "Sioweb\\Oxid\\Api\\Kernel\\Plugin"
+    "oxid-kernel-plugin": "Sioweb\\Oxid\\Api\\SiowebOxidApiBundle"
   },
   "require": {
     "php": ">=7.0",
@@ -27,8 +27,8 @@
   },
   "autoload": {
     "psr-4": {
-      "Sioweb\\Oxid\\Api\\": "src/",
-      "Sioweb\\Oxid\\Api\\Legacy\\": "../../../source/modules/sioweb/Api/"
+      "Sioweb\\Oxid\\Api\\Legacy\\": "../../../source/modules/sioweb/Api/",
+      "Sioweb\\Oxid\\Api\\": "src/"
     },
     "exclude-from-classmap": [
         "src/Resources/oxid"

@@ -1,0 +1,6 @@
+sioweb_oxid_api_catch_all:
+    path: /api/v1/{_url_fragment}
+    defaults:
+        _controller: "SiowebOxidApiBundle:Api:index"
+    requirements:
+        _url_fragment: .*
