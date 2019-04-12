@@ -1,3 +1,160 @@
+
+### ARTICLE
+
+sioweb_oxid_api_article:
+    path: /api/v1/article/
+    methods: [GET]
+    defaults:
+        _controller: "SiowebOxidApiBundle:Article:index"
+
+sioweb_oxid_api_article_new:
+    path: /api/v1/article/
+    methods: [POST]
+    defaults:
+        _controller: "SiowebOxidApiBundle:Article:new"
+
+sioweb_oxid_api_article_show:
+    path: /api/v1/article/{item}
+    methods: [GET]
+    defaults:
+        _controller: "SiowebOxidApiBundle:Article:show"
+    requirements:
+        item: .+
+
+sioweb_oxid_api_article_update:
+    path: /api/v1/article/{item}
+    methods: [PUT]
+    defaults:
+        _controller: "SiowebOxidApiBundle:Article:update"
+    requirements:
+        item: .+
+
+sioweb_oxid_api_article_delete:
+    path: /api/v1/article/{item}
+    methods: [DELETE]
+    defaults:
+        _controller: "SiowebOxidApiBundle:Article:delete"
+    requirements:
+        item: .+
+
+
+### CATEGORIES
+
+sioweb_oxid_api_category:
+    path: /api/v1/category/
+    methods: [GET]
+    defaults:
+        _controller: "SiowebOxidApiBundle:Category:index"
+
+sioweb_oxid_api_category_new:
+    path: /api/v1/category/
+    methods: [POST]
+    defaults:
+        _controller: "SiowebOxidApiBundle:Category:new"
+
+sioweb_oxid_api_category_show:
+    path: /api/v1/category/{item}
+    methods: [GET]
+    defaults:
+        _controller: "SiowebOxidApiBundle:Category:show"
+    requirements:
+        item: .+
+
+sioweb_oxid_api_category_update:
+    path: /api/v1/category/{item}
+    methods: [PUT]
+    defaults:
+        _controller: "SiowebOxidApiBundle:Category:update"
+    requirements:
+        item: .+
+
+sioweb_oxid_api_category_delete:
+    path: /api/v1/category/{item}
+    methods: [DELETE]
+    defaults:
+        _controller: "SiowebOxidApiBundle:Category:delete"
+    requirements:
+        item: .+
+
+
+### ORDER
+
+sioweb_oxid_api_order:
+    path: /api/v1/order/
+    methods: [GET]
+    defaults:
+        _controller: "SiowebOxidApiBundle:Order:index"
+
+sioweb_oxid_api_order_new:
+    path: /api/v1/order/
+    methods: [POST]
+    defaults:
+        _controller: "SiowebOxidApiBundle:Order:new"
+
+sioweb_oxid_api_order_show:
+    path: /api/v1/order/{item}
+    methods: [GET]
+    defaults:
+        _controller: "SiowebOxidApiBundle:Order:show"
+    requirements:
+        item: .+
+
+sioweb_oxid_api_order_update:
+    path: /api/v1/order/{item}
+    methods: [PUT]
+    defaults:
+        _controller: "SiowebOxidApiBundle:Order:update"
+    requirements:
+        item: .+
+
+sioweb_oxid_api_order_delete:
+    path: /api/v1/order/{item}
+    methods: [DELETE]
+    defaults:
+        _controller: "SiowebOxidApiBundle:Order:delete"
+    requirements:
+        item: .+
+
+
+### USER
+
+sioweb_oxid_api_user:
+    path: /api/v1/user/
+    methods: [GET]
+    defaults:
+        _controller: "SiowebOxidApiBundle:User:index"
+
+sioweb_oxid_api_user_new:
+    path: /api/v1/user/
+    methods: [POST]
+    defaults:
+        _controller: "SiowebOxidApiBundle:User:new"
+
+sioweb_oxid_api_user_show:
+    path: /api/v1/user/{item}
+    methods: [GET]
+    defaults:
+        _controller: "SiowebOxidApiBundle:User:show"
+    requirements:
+        item: .+
+
+sioweb_oxid_api_user_update:
+    path: /api/v1/user/{item}
+    methods: [PUT]
+    defaults:
+        _controller: "SiowebOxidApiBundle:User:update"
+    requirements:
+        item: .+
+
+sioweb_oxid_api_user_delete:
+    path: /api/v1/user/{item}
+    methods: [DELETE]
+    defaults:
+        _controller: "SiowebOxidApiBundle:Order:delete"
+    requirements:
+        item: .+
+
+
 sioweb_oxid_api_catch_all:
     path: /api/v1/{_url_fragment}
     defaults:
