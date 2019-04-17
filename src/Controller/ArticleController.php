@@ -6,11 +6,18 @@ namespace Sioweb\Oxid\Api\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Sioweb\Oxid\Api\Connector\Firewall;
 
-class ArticleController
+class ArticleController extends Controller
 {
     public function indexAction()
     {
+        $Firewall = new Firewall;
+        // die("<pre>" . print_r($this->getDoctrine(), true));
+        $Article = $Firewall('oxid.article');
+        $Article->fetchAll();
+        
+        $this->getDoctrine()->getManager();
         die("<pre>" . print_r('index Article', true));
     }
 

@@ -17,8 +17,8 @@ $aModule = [
     'email' => 'support@sioweb.com',
     'author' => 'Sascha Weidner',
     'extend' => [
-        // \OxidEsales\Eshop\Core\ShopControl::class =>
-        //     Sioweb\Oxid\Api\Legacy\Core\ShopControl::class,
+        \OxidEsales\Eshop\Application\Model\Article::class =>
+            Sioweb\Oxid\Api\Legacy\Model\Article::class,
     ],
     'events' => [
         // 'onActivate' => '\Sioweb\Oxid\Api\Legacy\Core\Events::onActivate',
