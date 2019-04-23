@@ -17,7 +17,7 @@ class Article extends Article_parent
     public function fetchAll()
     {
         $ViewNameGenerator = Registry::get(TableViewNameGenerator::class);
-        $ArticleView = $ViewNameGenerator->getViewName('oxarticle');
+        $ArticleView = $ViewNameGenerator->getViewName('oxarticles');
         $Database = DatabaseProvider::getDb();
         $rs = $Database->select("SELECT OXID FROM $ArticleView LIMIT 0, 100");
         die('<pre>' . print_r($rs->fetchAll(), true));
