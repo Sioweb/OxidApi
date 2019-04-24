@@ -4,44 +4,11 @@ namespace Sioweb\Oxid\Api\Legacy\Model;
 
 use OxidEsales\Eshop\Core\DatabaseProvider;
 use OxidEsales\Eshop\Core\Registry;
-use \OxidEsales\Eshop\Core\Field;
 use OxidEsales\Eshop\Core\TableViewNameGenerator;
 use OxidEsales\Eshop\Application\Model\Article AS OxidArticle;
 
 class Article extends Article_parent
 {
-
-    private $_fetchableFields = [
-        'oxid',
-        'oxparentid',
-        'oxactive',
-        'oxactivefrom',
-        'oxactiveto',
-        'oxmpn',
-        'oxtitle',
-        'oxshortdesc',
-        'oxprice',
-        'oxtprice',
-        'oxpic1',
-        'oxpic2',
-        'oxpic3',
-        'oxpic4',
-        'oxpic5',
-        'oxpic6',
-        'oxpic7',
-        'oxpic8',
-        'oxpic9',
-        'oxpic10',
-        'oxpic11',
-        'oxpic12',
-        'oxsort',
-        'oxvendorid',
-        'oxmanufacturerid',
-        'oxmindeltime',
-        'oxmaxdeltime',
-        'oxdeltimeunit',
-        'spglobalartnum',
-    ];
     
     public function fetch($sOXID)
     {
@@ -58,9 +25,7 @@ class Article extends Article_parent
         $Article = oxNew(OxidArticle::class);
         $Article->assign($rs);
 
-
         $index = 0;
-        
         foreach($Article->getFetchableFields() as $fieldName) {
             $longFieldName = $Article->_getFieldLongName($fieldName);
             if(!empty($Article->{$longFieldName}->value)) {
@@ -119,6 +84,36 @@ class Article extends Article_parent
 
     protected function getFetchableFields()
     {
-        return $this->_fetchableFields;
+        return [
+            'oxid',
+            'oxparentid',
+            'oxactive',
+            'oxactivefrom',
+            'oxactiveto',
+            'oxmpn',
+            'oxtitle',
+            'oxshortdesc',
+            'oxprice',
+            'oxtprice',
+            'oxpic1',
+            'oxpic2',
+            'oxpic3',
+            'oxpic4',
+            'oxpic5',
+            'oxpic6',
+            'oxpic7',
+            'oxpic8',
+            'oxpic9',
+            'oxpic10',
+            'oxpic11',
+            'oxpic12',
+            'oxsort',
+            'oxvendorid',
+            'oxmanufacturerid',
+            'oxmindeltime',
+            'oxmaxdeltime',
+            'oxdeltimeunit',
+            'spglobalartnum',
+        ];
     }
 }

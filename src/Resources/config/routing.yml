@@ -1,12 +1,6 @@
 
 ### ARTICLE
 
-sioweb_oxid_api_article:
-    path: /api/v1/article/
-    methods: [GET]
-    defaults:
-        _controller: "SiowebOxidApiBundle:Article:index"
-
 sioweb_oxid_api_article_new:
     path: /api/v1/article/
     methods: [POST]
@@ -14,7 +8,7 @@ sioweb_oxid_api_article_new:
         _controller: "SiowebOxidApiBundle:Article:new"
 
 sioweb_oxid_api_article_show:
-    path: /api/v1/article/{item}
+    path: /api/v1/article/{item}/
     methods: [GET]
     defaults:
         _controller: "SiowebOxidApiBundle:Article:show"
@@ -22,7 +16,7 @@ sioweb_oxid_api_article_show:
         item: .+
 
 sioweb_oxid_api_article_update:
-    path: /api/v1/article/{item}
+    path: /api/v1/article/{item}/
     methods: [PUT]
     defaults:
         _controller: "SiowebOxidApiBundle:Article:update"
@@ -30,13 +24,18 @@ sioweb_oxid_api_article_update:
         item: .+
 
 sioweb_oxid_api_article_delete:
-    path: /api/v1/article/{item}
+    path: /api/v1/article/{item}/
     methods: [DELETE]
     defaults:
         _controller: "SiowebOxidApiBundle:Article:delete"
     requirements:
         item: .+
 
+sioweb_oxid_api_article:
+    path: /api/v1/article/
+    methods: [GET]
+    defaults:
+        _controller: "SiowebOxidApiBundle:Article:index"
 
 ### CATEGORIES
 

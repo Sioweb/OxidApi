@@ -20,22 +20,31 @@ class ArticleController extends Controller
 
     public function newAction()
     {
-        die("<pre>" . print_r('new Article', true));
+        return new JsonResponse([
+            'status' => 'new article'
+        ]);
     }
 
-    public function showAction()
+    public function showAction($item)
     {
-        die("<pre>" . print_r('show Article', true));
+        $Firewall = new Firewall;
+        return new JsonResponse([
+            'article' => iterator_to_array($Firewall('oxid.article')->fetch($item), true)
+        ]);
     }
 
     public function updateAction()
     {
-        die("<pre>" . print_r('update Article', true));
+        return new JsonResponse([
+            'status' => 'update Article'
+        ]);
     }
 
     public function deleteAction()
     {
-        die("<pre>" . print_r('delete Article', true));
+        return new JsonResponse([
+            'status' => 'delete Article'
+        ]);
     }
 
 }
