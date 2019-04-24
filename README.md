@@ -1,5 +1,9 @@
 # Oxid 6 REST-Api auf Symfonybasis
 
+## Vorwort
+
+Diese API befindet sich im Aufbau, wenn ihr die API installiert, hat jeder Zugriff auf eure Artikel & Kategorien. Ich rate vom Live-Betrieb ab - auch wenn es funktionieren würde - bis eine Authentifizierung mit nem Secret Key oder HTTP-Password möglich ist.
+
 ## Installation
 
 ```
