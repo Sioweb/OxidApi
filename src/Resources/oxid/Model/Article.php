@@ -28,7 +28,7 @@ class Article extends Article_parent
         $index = 0;
         foreach($Article->getFetchableFields() as $fieldName) {
             $longFieldName = $Article->_getFieldLongName($fieldName);
-            if(!empty($Article->{$longFieldName}->value)) {
+            if(!empty($Article->{$longFieldName}->value) && $Article->{$longFieldName}->value !== "''") {
                 yield $fieldName => $Article->{$longFieldName}->value;
             }
         }

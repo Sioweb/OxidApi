@@ -21,6 +21,8 @@ $aModule = [
             Sioweb\Oxid\Api\Legacy\Model\Article::class,
         \OxidEsales\Eshop\Application\Model\Vendor::class =>
             Sioweb\Oxid\Api\Legacy\Model\Vendor::class,
+        \OxidEsales\Eshop\Application\Model\Category::class =>
+            Sioweb\Oxid\Api\Legacy\Model\Category::class,
         \OxidEsales\Eshop\Application\Model\Manufacturer::class =>
             Sioweb\Oxid\Api\Legacy\Model\Manufacturer::class,
     ],

@@ -39,12 +39,6 @@ sioweb_oxid_api_article:
 
 ### CATEGORIES
 
-sioweb_oxid_api_category:
-    path: /api/v1/category/
-    methods: [GET]
-    defaults:
-        _controller: "SiowebOxidApiBundle:Category:index"
-
 sioweb_oxid_api_category_new:
     path: /api/v1/category/
     methods: [POST]
@@ -52,7 +46,7 @@ sioweb_oxid_api_category_new:
         _controller: "SiowebOxidApiBundle:Category:new"
 
 sioweb_oxid_api_category_show:
-    path: /api/v1/category/{item}
+    path: /api/v1/category/{item}/
     methods: [GET]
     defaults:
         _controller: "SiowebOxidApiBundle:Category:show"
@@ -60,7 +54,7 @@ sioweb_oxid_api_category_show:
         item: .+
 
 sioweb_oxid_api_category_update:
-    path: /api/v1/category/{item}
+    path: /api/v1/category/{item}/
     methods: [PUT]
     defaults:
         _controller: "SiowebOxidApiBundle:Category:update"
@@ -68,12 +62,18 @@ sioweb_oxid_api_category_update:
         item: .+
 
 sioweb_oxid_api_category_delete:
-    path: /api/v1/category/{item}
+    path: /api/v1/category/{item}/
     methods: [DELETE]
     defaults:
         _controller: "SiowebOxidApiBundle:Category:delete"
     requirements:
         item: .+
+
+sioweb_oxid_api_category:
+    path: /api/v1/category/
+    methods: [GET]
+    defaults:
+        _controller: "SiowebOxidApiBundle:Category:index"
 
 
 ### ORDER
@@ -91,7 +91,7 @@ sioweb_oxid_api_order_new:
         _controller: "SiowebOxidApiBundle:Order:new"
 
 sioweb_oxid_api_order_show:
-    path: /api/v1/order/{item}
+    path: /api/v1/order/{item}/
     methods: [GET]
     defaults:
         _controller: "SiowebOxidApiBundle:Order:show"
@@ -99,7 +99,7 @@ sioweb_oxid_api_order_show:
         item: .+
 
 sioweb_oxid_api_order_update:
-    path: /api/v1/order/{item}
+    path: /api/v1/order/{item}/
     methods: [PUT]
     defaults:
         _controller: "SiowebOxidApiBundle:Order:update"
@@ -107,7 +107,7 @@ sioweb_oxid_api_order_update:
         item: .+
 
 sioweb_oxid_api_order_delete:
-    path: /api/v1/order/{item}
+    path: /api/v1/order/{item}/
     methods: [DELETE]
     defaults:
         _controller: "SiowebOxidApiBundle:Order:delete"
@@ -130,7 +130,7 @@ sioweb_oxid_api_user_new:
         _controller: "SiowebOxidApiBundle:User:new"
 
 sioweb_oxid_api_user_show:
-    path: /api/v1/user/{item}
+    path: /api/v1/user/{item}/
     methods: [GET]
     defaults:
         _controller: "SiowebOxidApiBundle:User:show"
@@ -138,7 +138,7 @@ sioweb_oxid_api_user_show:
         item: .+
 
 sioweb_oxid_api_user_update:
-    path: /api/v1/user/{item}
+    path: /api/v1/user/{item}/
     methods: [PUT]
     defaults:
         _controller: "SiowebOxidApiBundle:User:update"
@@ -146,7 +146,7 @@ sioweb_oxid_api_user_update:
         item: .+
 
 sioweb_oxid_api_user_delete:
-    path: /api/v1/user/{item}
+    path: /api/v1/user/{item}/
     methods: [DELETE]
     defaults:
         _controller: "SiowebOxidApiBundle:Order:delete"
