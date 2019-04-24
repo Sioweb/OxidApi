@@ -12,13 +12,10 @@ class ArticleController extends Controller
 {
     public function indexAction()
     {
+        ini_set('memory_limit', '800M');
+        ini_set('max_execution_time', '120');
         $Firewall = new Firewall;
-        // die("<pre>" . print_r($this->getDoctrine(), true));
-        $Article = $Firewall('oxid.article');
-        $Article->fetchAll();
-        
-        $this->getDoctrine()->getManager();
-        die("<pre>" . print_r('index Article', true));
+        return new JsonResponse(iterator_to_array($Firewall('oxid.article')->fetchAll()));
     }
 
     public function newAction()

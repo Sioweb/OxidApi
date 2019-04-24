@@ -4,6 +4,11 @@ namespace Sioweb\Oxid\Api\Connector;
 
 class Firewall
 {
+    private static $oxid_article;
+    private static $oxid_user;
+    private static $oxid_category;
+    private static $oxid_order;
+
     private $secure = [
         'oxid.article' => [
             'class' => 'OxidEsales\Eshop\Application\Model\Article',
@@ -26,6 +31,11 @@ class Firewall
 
     private function resolve($service, $param)
     {
+        $staticService = str_replace('.', '_', $service);
+        if(!empty(static::${$staticService})) {
+            return static::${$staticService};
+        }
+
         if (empty($this->secure[$service])) {
             throw new Exception(sprintf('Service \'%s\' is not added to secure list', $service));
         }
@@ -35,6 +45,8 @@ class Firewall
         }
 
         $classname = $this->secure[$service]['class'];
-        return oxNew($classname);
+        static::${$staticService} = oxNew($classname);
+
+        return static::${$staticService};
     }
 }

@@ -19,6 +19,10 @@ $aModule = [
     'extend' => [
         \OxidEsales\Eshop\Application\Model\Article::class =>
             Sioweb\Oxid\Api\Legacy\Model\Article::class,
+        \OxidEsales\Eshop\Application\Model\Vendor::class =>
+            Sioweb\Oxid\Api\Legacy\Model\Vendor::class,
+        \OxidEsales\Eshop\Application\Model\Manufacturer::class =>
+            Sioweb\Oxid\Api\Legacy\Model\Manufacturer::class,
     ],
     'events' => [
         // 'onActivate' => '\Sioweb\Oxid\Api\Legacy\Core\Events::onActivate',
