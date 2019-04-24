@@ -14,7 +14,7 @@ Nach der Installation, müssen die Module `Sioweb | Oxid Kernel` und `Sioweb | O
 
 ## Was zum?
 
-Ja genau. Eine REST-API auf Symfony-Basis mit echten Routen.
+Ja genau. Eine REST-API auf Symfony-Basis mit echten Routen die Informationen als JSON ausgibt.
 
 ## Routen
 
