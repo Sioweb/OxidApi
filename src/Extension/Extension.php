@@ -41,5 +41,10 @@ class Extension extends BaseExtension
             $container,
             new FileLocator(__DIR__.'/../Resources/config')
         );
+
+        $rootDir = $container->getParameter('kernel.root_dir');
+        // $loader->load('security.yml');
+
+		// $container->setParameter('glossar.config', $mergedConfig);
     }
 }

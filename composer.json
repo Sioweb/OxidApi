@@ -23,7 +23,8 @@
   },
   "require": {
     "php": ">=7.0",
-    "sioweb/oxid-kernel": "*"
+    "sioweb/oxid-kernel": "*",
+    "symfony/security": "^2"
   },
   "autoload": {
     "psr-4": {

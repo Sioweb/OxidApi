@@ -7,6 +7,8 @@ use Symfony\Component\HttpKernel\Bundle\Bundle AS BaseBundle;
 use Sioweb\Oxid\Kernel\Bundle\BundleRoutesInterface;
 use Symfony\Component\Config\Loader\LoaderResolverInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
+use Symfony\Component\Config\Loader\LoaderInterface;
+use Sioweb\Oxid\Kernel\Bundle\BundleConfigInterface;
 
 /**
  * Configures the Contao Glossar bundle.
@@ -33,5 +35,4 @@ class SiowebOxidApiBundle extends BaseBundle implements BundleRoutesInterface
             ->load(__DIR__ . '/Resources/config/routing.yml')
         ;
     }
-    
 }
