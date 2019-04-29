@@ -1,0 +1,7 @@
+services:
+    sioweb.api.security.tokenauthenticator:
+        class: Sioweb\Oxid\Api\Security\TokenAuthenticator
+        public: true
+
+    sioweb.api.security.user.provider:
+        class: Sioweb\Oxid\Api\Security\User\WebserviceUserProvider

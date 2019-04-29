@@ -8,11 +8,13 @@ declare (strict_types = 1);
 
 namespace Sioweb\Oxid\Api\Extension;
 
-use Symfony\Component\Yaml\Yaml;
 use Symfony\Component\Config\FileLocator;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Extension\Extension AS BaseExtension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
+use Sioweb\Oxid\Kernel\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
+use Symfony\Component\DependencyInjection\ContainerBuilder AS BaseContainerBuilder;
+use Symfony\Component\DependencyInjection\Extension\Extension AS BaseExtension;
+use Symfony\Bundle\SecurityBundle\DependencyInjection\SecurityExtension;
 
 /**
  * @file Extension.php
@@ -22,7 +24,7 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
  * @copyright Sascha Weidner, Sioweb
  */
 
-class Extension extends BaseExtension
+class Extension extends BaseExtension implements PrependExtensionInterface //implements OxidKernelExtensionInterface
 {
 	/**
 	 * {@inheritdoc}
@@ -31,20 +33,37 @@ class Extension extends BaseExtension
 	{
 		return 'oxid-api';
     }
-    
-    /**
-     * {@inheritdoc}
-     */
-    public function load(array $configs, ContainerBuilder $container)
+  
+    public function load(array $configs, BaseContainerBuilder $container)
     {
         $loader = new YamlFileLoader(
             $container,
             new FileLocator(__DIR__.'/../Resources/config')
         );
+        $loader->load('services.yml');
+    }
 
-        $rootDir = $container->getParameter('kernel.root_dir');
-        // $loader->load('security.yml');
+    public function prepend(BaseContainerBuilder $container)
+    {
+        $loader = new YamlFileLoader(
+            $container,
+            new FileLocator(__DIR__.'/../Resources/config')
+        );
+        $loader->load('services.yml');
+        $loader->load('security.yml');
 
-		// $container->setParameter('glossar.config', $mergedConfig);
+        // process the configuration of AcmeHelloExtension
+        // $configs = $container->getExtensionConfig($this->getAlias());
+        
+        // // use the Configuration class to generate a config array with
+        // // the settings "acme_hello"
+        // $config = $this->processConfiguration(new Configuration(), $configs);
+
+        // // check if entity_manager_name is set in the "acme_hello" configuration
+        // if (isset($config['entity_manager_name'])) {
+        //     // prepend the acme_something settings with the entity_manager_name
+        //     $config = ['entity_manager_name' => $config['entity_manager_name']];
+        //     $container->prependExtensionConfig('acme_something', $config);
+        // }
     }
 }
