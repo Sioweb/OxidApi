@@ -20,6 +20,8 @@ Ja genau. Eine REST-API auf Symfony-Basis mit echten Routen die Informationen al
 
 ### Folgende `Routes` liefern ergebnisse:
 
+Curl in der Konsole nutzen: `curl -k -H "X-AUTH-TOKEN: THIS_IS_A_TOKEN" https://deine-url/api/v1/article/`
+
 #### Artikel
 
 - https://deine-domain.tld/api/v1/article/ [GET]
