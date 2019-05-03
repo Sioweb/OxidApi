@@ -31,7 +31,12 @@ class Firewall
 
     public function __invoke($service, ...$param)
     {
-        return $this->resolve($service, $param);
+        $_controller = $_GET['_controller'];
+        $_GET['_controller'] = '_sioweb_oxid_api_firewall';
+        $Resolved = $this->resolve($service, $param);
+        $_GET['_controller'] = $_controller;
+
+        return $Resolved;
     }
 
     private function resolve($service, $param)

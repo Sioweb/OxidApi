@@ -53,13 +53,8 @@ class UserProvider implements UserProviderInterface
                 $User->oxuser__oxpasssalt->value,
                 []
             );
-
             return static::$user;
-        } catch(\Exception $e) {
-            // header('WWW-Authenticate: Basic realm="Oxid API Login"');
-            // header('HTTP/1.0 401 Unauthorized');
-            // die();
-        }
+        } catch(\Exception $e) {}
 
         throw new UsernameNotFoundException(
             sprintf('Username "%s" does not exist.', $UserData['username'])

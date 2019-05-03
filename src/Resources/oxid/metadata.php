@@ -25,10 +25,12 @@ $aModule = [
             Sioweb\Oxid\Api\Legacy\Model\Category::class,
         \OxidEsales\Eshop\Application\Model\Manufacturer::class =>
             Sioweb\Oxid\Api\Legacy\Model\Manufacturer::class,
+        \OxidEsales\Eshop\Application\Model\User::class =>
+            Sioweb\Oxid\Api\Legacy\Model\User::class,
     ],
     'events' => [
-        // 'onActivate' => '\Sioweb\Oxid\Api\Legacy\Core\Events::onActivate',
-        // 'onDeactivate' => '\Sioweb\Oxid\Api\Legacy\Core\Events::onDeactivate',
+        'onActivate' => '\Sioweb\Oxid\Api\Legacy\Core\Events::onActivate',
+        'onDeactivate' => '\Sioweb\Oxid\Api\Legacy\Core\Events::onDeactivate',
     ],
     // 'templates' => [
     //     'formbuilder_shop_main.tpl' => 'sioweb/Backend/views/admin/tpl/form/formbuilder_shop_main.tpl',

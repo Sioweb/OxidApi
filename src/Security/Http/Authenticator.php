@@ -38,6 +38,10 @@ class Authenticator extends AbstractGuardAuthenticator
      */
     public function getCredentials(Request $request)
     {
+        if($this->supports($request)) {
+            return null;
+        }
+
         if (
             $request->server->has('HTTP_CLIENT_IP')
             // || $request->server->has('HTTP_X_FORWARDED_FOR')

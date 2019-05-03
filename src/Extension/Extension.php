@@ -53,19 +53,5 @@ class Extension extends BaseExtension implements PrependExtensionInterface //imp
         $loader->load('services.yml');
         $loader->load('security.yml');
         $loader->load('listener.yml');
-
-        // process the configuration of AcmeHelloExtension
-        // $configs = $container->getExtensionConfig($this->getAlias());
-        
-        // // use the Configuration class to generate a config array with
-        // // the settings "acme_hello"
-        // $config = $this->processConfiguration(new Configuration(), $configs);
-
-        // // check if entity_manager_name is set in the "acme_hello" configuration
-        // if (isset($config['entity_manager_name'])) {
-        //     // prepend the acme_something settings with the entity_manager_name
-        //     $config = ['entity_manager_name' => $config['entity_manager_name']];
-        //     $container->prependExtensionConfig('acme_something', $config);
-        // }
     }
 }

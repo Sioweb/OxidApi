@@ -52,10 +52,6 @@ class Authenticator extends AbstractGuardAuthenticator
 
     public function checkCredentials($credentials, UserInterface $user)
     {
-        // check credentials - e.g. make sure the password is valid
-        // no credential check is needed in this case
-
-        // return true to cause authentication success
         return true;
     }
 
