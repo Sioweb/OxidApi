@@ -2,7 +2,7 @@
 
 ## Vorwort
 
-Diese API befindet sich im Aufbau, wenn ihr die API installiert, hat jeder Zugriff auf eure Artikel & Kategorien. Ich rate vom Live-Betrieb ab - auch wenn es funktionieren würde - <b>bis eine Authentifizierung mit nem Secret Key oder HTTP-Password möglich ist</b> Authentifizierung siehe weiter unten.
+Diese API befindet sich im Aufbau, wenn ihr die API installiert, hat jeder Zugriff auf eure Artikel & Kategorien. Ich rate vom Live-Betrieb ab - auch wenn es funktionieren würde - <del>bis eine Authentifizierung mit nem Secret Key oder HTTP-Password möglich ist</del> Authentifizierung siehe weiter unten.
 
 ## Installation
 
