@@ -26,7 +26,17 @@ Es fehlt nun noch, Routen einzeln zu schützen und ein Token-Login soll ebenfall
 
 ### Folgende `Routes` liefern ergebnisse:
 
-Curl in der Konsole nutzen: `curl -k -H "X-AUTH-TOKEN: THIS_IS_A_TOKEN" https://deine-url/api/v1/article/`
+Nach der Installation, wird in der Tabelle `oxuser` das Feld `APITOKEN` angelegt. Angenommen der User `max.mustermann@beispiel.tld` möchte die API verwenden:
+
+```
+UPDATE `oxuser` SET APITOKEN = 'THIS_IS_A_TOKEN' WHERE USERNAME = 'max.mustermann@beispiel.tld';
+```
+
+Danach kann in der Konsole die API mit CURL und dem eben angelegten Token verwendet werden:
+
+```
+curl -k -H "X-AUTH-TOKEN: THIS_IS_A_TOKEN" https://deine-url/api/v1/article/
+```
 
 #### Artikel
 
