@@ -24,6 +24,11 @@ class Firewall
         ],
     ];
 
+    public function __construct()
+    {
+        
+    }
+
     public function __invoke($service, ...$param)
     {
         return $this->resolve($service, $param);
@@ -45,7 +50,7 @@ class Firewall
         }
 
         $classname = $this->secure[$service]['class'];
-        static::${$staticService} = oxNew($classname);
+        static::${$staticService} = oxNew($classname, $param);
 
         return static::${$staticService};
     }

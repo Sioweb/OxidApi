@@ -41,6 +41,7 @@ class Extension extends BaseExtension implements PrependExtensionInterface //imp
             new FileLocator(__DIR__.'/../Resources/config')
         );
         $loader->load('services.yml');
+        $loader->load('listener.yml');
     }
 
     public function prepend(BaseContainerBuilder $container)
@@ -51,6 +52,7 @@ class Extension extends BaseExtension implements PrependExtensionInterface //imp
         );
         $loader->load('services.yml');
         $loader->load('security.yml');
+        $loader->load('listener.yml');
 
         // process the configuration of AcmeHelloExtension
         // $configs = $container->getExtensionConfig($this->getAlias());

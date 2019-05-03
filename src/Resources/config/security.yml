@@ -1,7 +1,12 @@
 security:
     providers:
+        chain_provider:
+            chain:
+                providers: [webservice, http]
         webservice:
-            id: sioweb.api.security.user.provider
+            id: sioweb.api.security.webservice.provider
+        http:
+            id: sioweb.api.security.http.provider
 
     firewalls:
         dev:
@@ -9,11 +14,11 @@ security:
             security: false
 
         main:
-            pattern: '^/api'
+            pattern: "^/api"
             anonymous: true
             logout: true
             guard:
-                authenticators: 
-                    # - "@sioweb.api.security.tokenauthenticator"
-                    # - Sioweb\Oxid\Api\Security\TokenAuthenticator
-                    - sioweb.api.security.tokenauthenticator
+                authenticators:
+                    - sioweb.api.security.webservice.authenticator
+                    - sioweb.api.security.http.authenticator
+                entry_point: sioweb.api.security.webservice.authenticator

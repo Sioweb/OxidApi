@@ -1,11 +1,11 @@
 <?php
 
-namespace Sioweb\Oxid\Api\Security\User;
+namespace Sioweb\Oxid\Api\Security\Http;
 
 use Symfony\Component\Security\Core\User\EquatableInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
-class WebserviceUser implements UserInterface, EquatableInterface
+class User implements UserInterface, EquatableInterface
 {
     private $username;
     private $password;
@@ -46,7 +46,7 @@ class WebserviceUser implements UserInterface, EquatableInterface
 
     public function isEqualTo(UserInterface $user)
     {
-        if (!$user instanceof WebserviceUser) {
+        if (!$user instanceof User) {
             return false;
         }
 

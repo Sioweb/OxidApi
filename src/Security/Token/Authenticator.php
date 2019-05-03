@@ -1,6 +1,6 @@
 <?php
 
-namespace Sioweb\Oxid\Api\Security;
+namespace Sioweb\Oxid\Api\Security\Token;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -11,7 +11,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Guard\AbstractGuardAuthenticator;
 
-class TokenAuthenticator extends AbstractGuardAuthenticator
+class Authenticator extends AbstractGuardAuthenticator
 {
     /**
      * Called on every request to decide if this authenticator should be
@@ -29,6 +29,10 @@ class TokenAuthenticator extends AbstractGuardAuthenticator
      */
     public function getCredentials(Request $request)
     {
+        if(!$this->supports($request)) {
+            return null;
+        }
+        
         return [
             'token' => $request->headers->get('X-AUTH-TOKEN'),
         ];

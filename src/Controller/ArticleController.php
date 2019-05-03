@@ -10,11 +10,16 @@ use Sioweb\Oxid\Api\Connector\Firewall;
 
 class ArticleController extends Controller
 {
+
+    /**
+     * @Scope("Test")
+     */
     public function indexAction()
     {
         ini_set('memory_limit', '800M');
         ini_set('max_execution_time', '120');
         $Firewall = new Firewall;
+        // die('<pre>' . print_r($Firewall('oxid.user'), true));
         return new JsonResponse(iterator_to_array($Firewall('oxid.article')->fetchAll()));
     }
 

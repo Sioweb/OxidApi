@@ -1,0 +1,8 @@
+services:
+    security.firewall:
+        class: Sioweb\Oxid\Api\Security\Component\Firewall
+        arguments:
+            - "@security.firewall.map"
+            - "@event_dispatcher"
+        tags:
+            - { name: kernel.event_subscriber }
