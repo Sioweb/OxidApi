@@ -24,7 +24,7 @@
   "require": {
     "php": ">=7.0",
     "sioweb/oxid-kernel": "*",
-    "symfony/security-bundle": "^3.2"
+    "symfony/security-bundle": "^3.1"
   },
   "autoload": {
     "psr-4": {
