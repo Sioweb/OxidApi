@@ -11,6 +11,6 @@ class ApiController
 {
     public function indexAction()
     {
-        die('Hallo!');
+        die('Api::ApiController::indexAction!');
     }
 }

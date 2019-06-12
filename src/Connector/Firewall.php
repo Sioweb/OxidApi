@@ -24,9 +24,9 @@ class Firewall
         ],
     ];
 
-    public function __construct()
+    public function __construct($secure = [])
     {
-        
+        $this->secure = array_merge($this->secure, $secure);
     }
 
     public function __invoke($service, ...$param)
@@ -47,11 +47,11 @@ class Firewall
         }
 
         if (empty($this->secure[$service])) {
-            throw new Exception(sprintf('Service \'%s\' is not added to secure list', $service));
+            throw new \Exception(sprintf('Service \'%s\' is not added to secure list', $service));
         }
 
         if (empty($this->secure[$service]['class'])) {
-            throw new Exception(sprintf('Service \'%s\' has no executable class defined', $service));
+            throw new \Exception(sprintf('Service \'%s\' has no executable class defined', $service));
         }
 
         $classname = $this->secure[$service]['class'];
