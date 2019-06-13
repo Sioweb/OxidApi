@@ -11,6 +11,9 @@ class ApiController
 {
     public function indexAction()
     {
-        die('Api::ApiController::indexAction!');
+        return new JsonResponse([
+            'error' => 404,
+            'message' => 'No routes where found for this api call!'
+        ]);
     }
 }
