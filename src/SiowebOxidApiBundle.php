@@ -4,14 +4,14 @@ namespace Sioweb\Oxid\Api;
 
 use Sioweb\Oxid\Api\Extension\Extension;
 use Symfony\Component\HttpKernel\Bundle\Bundle AS BaseBundle;
-use Sioweb\Oxid\Kernel\Bundle\BundleRoutesInterface;
+use OxidCommunity\SymfonyKernel\Bundle\BundleRoutesInterface;
 use Symfony\Component\Config\Loader\LoaderResolverInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Routing\RouteCollection;
-use Sioweb\Oxid\Kernel\DependencyInjection\ContainerBuilder;
-use Sioweb\Oxid\Kernel\Bundle\BundleConfigurationInterface;
+use OxidCommunity\SymfonyKernel\DependencyInjection\ContainerBuilder;
+use OxidCommunity\SymfonyKernel\Bundle\BundleConfigurationInterface;
 use Symfony\Component\Config\FileLocator;
-use Sioweb\Oxid\Kernel\DependencyInjection\Loader\YamlFileLoader;
+use OxidCommunity\SymfonyKernel\DependencyInjection\Loader\YamlFileLoader;
 
 /**
  * Configures the Contao Glossar bundle.
