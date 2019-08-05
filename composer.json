@@ -19,10 +19,10 @@
       "source-directory": "./src/Resources/oxid",
       "target-directory": "sioweb/Api"
     },
-    "oxid-kernel-plugin": [
-      "Sioweb\\Oxid\\Api\\SiowebOxidApiBundle",
-      "Symfony\\Bundle\\SecurityBundle\\SecurityBundle"
-    ]
+    "oxid-kernel-plugin": {
+        "sioweb/oxid-api": "Sioweb\\Oxid\\Api\\SiowebOxidApiBundle",
+        "symfony/security-bundle": "Symfony\\Bundle\\SecurityBundle\\SecurityBundle"
+    }
   },
   "require": {
     "php": ">=7.0",
