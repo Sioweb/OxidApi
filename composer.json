@@ -1,13 +1,10 @@
 {
   "name": "sioweb/oxid-api",
   "description": "Symfony based api",
-  "type": "oxideshop-module",
-  "keywords": [
-    "oxid",
-    "modules",
-    "cronjob"
-  ],
-  "homepage": "https://www.sioweb.de",
+  "type": "oxidkernel-module",
+  "version": "6.0.0",
+  "keywords": ["oxid","modules","rest", "api"],
+  "homepage": "https://github.com/Sioweb/OxidApi",
   "license": [
     "GPL-3.0-only"
   ],
@@ -20,14 +17,15 @@
       "target-directory": "sioweb/Api"
     },
     "oxid-kernel-plugin": {
-        "sioweb/oxid-api": "Sioweb\\Oxid\\Api\\SiowebOxidApiBundle",
-        "symfony/security-bundle": "Symfony\\Bundle\\SecurityBundle\\SecurityBundle"
+      "sioweb/oxid-api": "Sioweb\\Oxid\\Api\\SiowebOxidApiBundle",
+      "symfony/security-bundle": "Symfony\\Bundle\\SecurityBundle\\SecurityBundle"
     }
   },
   "require": {
-    "php": ">=7.0",
+    "php": "^7.0",
     "oxid-community/symfony-kernel": "*",
-    "symfony/security-bundle": "~3.1.0"
+    "symfony/security-bundle": "~3.1.0",
+    "sioweb/ccevent-git": "*"
   },
   "autoload": {
     "psr-4": {
@@ -35,7 +33,13 @@
       "Sioweb\\Oxid\\Api\\": "src/"
     },
     "exclude-from-classmap": [
-        "src/Resources/oxid"
+      "src/Resources/oxid"
+    ]
+  },
+  "scripts": {
+    "package-scripts": [
+      "@config.localhost==1",
+      "Sioweb\\CCEvent\\Git\\Composer\\Git::init --repository=https://github.com/Sioweb/OxidApi"
     ]
   }
 }
