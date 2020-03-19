@@ -2,7 +2,6 @@
   "name": "sioweb/oxid-api",
   "description": "Symfony based api",
   "type": "oxidkernel-module",
-  "version": "6.0.0",
   "keywords": ["oxid","modules","rest", "api"],
   "homepage": "https://github.com/Sioweb/OxidApi",
   "license": [
