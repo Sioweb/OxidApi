@@ -1,6 +1,6 @@
 <?php
 
-namespace Sioweb\Oxid\Api\Legacy\Core;
+namespace Sioweb\Oxid\Api\Core;
 
 use OxidEsales\Eshop\Core\DatabaseProvider;
 use OxidEsales\Eshop\Core\DbMetaDataHandler;

@@ -28,7 +28,6 @@
   },
   "autoload": {
     "psr-4": {
-      "Sioweb\\Oxid\\Api\\Legacy\\": "../../../source/modules/sioweb/Api/",
       "Sioweb\\Oxid\\Api\\": "src/"
     },
     "exclude-from-classmap": [

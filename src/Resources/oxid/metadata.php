@@ -18,19 +18,19 @@ $aModule = [
     'author' => 'Sascha Weidner',
     'extend' => [
         \OxidEsales\Eshop\Application\Model\Article::class =>
-            Sioweb\Oxid\Api\Legacy\Model\Article::class,
+            Sioweb\Oxid\Api\Model\Article::class,
         \OxidEsales\Eshop\Application\Model\Vendor::class =>
-            Sioweb\Oxid\Api\Legacy\Model\Vendor::class,
+            Sioweb\Oxid\Api\Model\Vendor::class,
         \OxidEsales\Eshop\Application\Model\Category::class =>
-            Sioweb\Oxid\Api\Legacy\Model\Category::class,
+            Sioweb\Oxid\Api\Model\Category::class,
         \OxidEsales\Eshop\Application\Model\Manufacturer::class =>
-            Sioweb\Oxid\Api\Legacy\Model\Manufacturer::class,
+            Sioweb\Oxid\Api\Model\Manufacturer::class,
         \OxidEsales\Eshop\Application\Model\User::class =>
-            Sioweb\Oxid\Api\Legacy\Model\User::class,
+            Sioweb\Oxid\Api\Model\User::class,
     ],
     'events' => [
-        'onActivate' => '\Sioweb\Oxid\Api\Legacy\Core\Events::onActivate',
-        'onDeactivate' => '\Sioweb\Oxid\Api\Legacy\Core\Events::onDeactivate',
+        'onActivate' => '\Sioweb\Oxid\Api\Core\Events::onActivate',
+        'onDeactivate' => '\Sioweb\Oxid\Api\Core\Events::onDeactivate',
     ],
     // 'templates' => [
     //     'formbuilder_shop_main.tpl' => 'sioweb/Backend/views/admin/tpl/form/formbuilder_shop_main.tpl',

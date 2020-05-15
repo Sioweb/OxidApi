@@ -1,6 +1,6 @@
 <?php
 
-namespace Sioweb\Oxid\Api\Legacy\Model;
+namespace Sioweb\Oxid\Api\Model;
 
 use OxidEsales\Eshop\Core\DatabaseProvider;
 use OxidEsales\Eshop\Core\Registry;
