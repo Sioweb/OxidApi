@@ -2,6 +2,8 @@ services:
     sioweb.api.security.webservice.authenticator:
         class: Sioweb\Oxid\Api\Security\Token\Authenticator
         public: true
+        arguments:
+            - "@sioweb.api.security.routing.matcher"
 
     sioweb.api.security.webservice.provider:
         class: Sioweb\Oxid\Api\Security\Token\UserProvider
@@ -11,7 +13,14 @@ services:
         class: Sioweb\Oxid\Api\Security\Http\Authenticator
         public: true
         arguments:
+            - "@sioweb.api.security.routing.matcher"
             - "@service_container"
         
     sioweb.api.security.http.provider:
         class: Sioweb\Oxid\Api\Security\Http\UserProvider
+
+    sioweb.api.security.routing.matcher:
+        class: Symfony\Component\HttpFoundation\RequestMatcher
+        public: true
+        calls:
+            - ["matchAttribute", ["_scope", "secured"]]

@@ -13,6 +13,14 @@ use Symfony\Component\Security\Guard\AbstractGuardAuthenticator;
 
 class Authenticator extends AbstractGuardAuthenticator
 {
+    public function __construct($ScopeMatcher)
+    {
+        $this->ScopeMatcher = $ScopeMatcher;
+        $this->ScopeMatcher->matchAttribute('_scope', 'public');
+
+        $this->container = $container;
+    }
+
     /**
      * Called on every request to decide if this authenticator should be
      * used for the request. Returning false will cause this authenticator
@@ -29,7 +37,7 @@ class Authenticator extends AbstractGuardAuthenticator
      */
     public function getCredentials(Request $request)
     {
-        if(!$this->supports($request)) {
+        if($this->ScopeMatcher->matches($request)  || !$this->supports($request)) {
             return null;
         }
         

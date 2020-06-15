@@ -18,8 +18,11 @@ class Authenticator extends AbstractGuardAuthenticator
 {
     private $container;
 
-    public function __construct($container)
+    public function __construct($ScopeMatcher, $container)
     {
+        $this->ScopeMatcher = $ScopeMatcher;
+        $this->ScopeMatcher->matchAttribute('_scope', 'public');
+
         $this->container = $container;
     }
     /**
@@ -38,7 +41,7 @@ class Authenticator extends AbstractGuardAuthenticator
      */
     public function getCredentials(Request $request)
     {
-        if($this->supports($request)) {
+        if($this->ScopeMatcher->matches($request) || $this->supports($request)) {
             return null;
         }
 
